@@ -1,0 +1,20 @@
+#container {
+  position: absolute;
+  background-color: gray;
+  color: white;
+  padding: 2rem;
+  top: 0;
+  left: 0;
+}
+
+button {
+  border-radius: 7px;
+  padding: 5px;
+  border: 1px dashed gray;
+}
+
+#log {
+  border: 3px dashed cyan;
+  padding: 5rem;
+  margin: 2rem;
+}
