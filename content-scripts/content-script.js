@@ -1,4 +1,4 @@
-console.log('hello from the content-scripts controller');
+console.log('content-scripts controller entrance');
 
 document.body.innerHTML += `
   <div id="root">
@@ -9,10 +9,13 @@ document.body.innerHTML += `
   </div>
 `;
 
-chrome.runtime.onMessage.addListener((msg) => {
-  document.querySelector('#log').innerHTML += `<div>${msg.text}</div>`;
+document.querySelector('#btn').addEventListener('click', () => {
+  console.log(`button click callback`);
+  chrome.runtime.sendMessage({message: `content sript message at ${new Date()}`});
 });
 
-document.querySelector('#btn').addEventListener('click', () => {
-  chrome.runtime.sendMessage({ text: `content sript message at ${new Date()}`});
+chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+  console.log(request, sender, sendResponse);
 });
+
+chrome.runtime.sendMessage({message: `end of script`});

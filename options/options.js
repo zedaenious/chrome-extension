@@ -1,9 +1,10 @@
-console.log('hello from the options page service worker content script');
+console.log('options controller entrance');
 
-document. querySelector('#btn').addEventListener('click', (msg) => {
-  chrome.runtime.sendMessage({ text: `Message from the options button at ${new Date()}`});
+document. querySelector('#btn').addEventListener('click', () => {
+  chrome.runtime.sendMessage({ message: `Message from the options button at ${new Date()}`});
 });
 
-chrome.runtime.onMessage.addListener((msg) => {
-  document.body.innerHTML += `<div>${msg.text}</div>`;
+chrome.runtime.onMessage.addListener((response) => {
+  console.log(response);
+  document.body.innerHTML += `<div>${response.message}</div><br/>`;
 })

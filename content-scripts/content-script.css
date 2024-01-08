@@ -1,13 +1,14 @@
-#container {
+#root {
   position: absolute;
-  background-color: gray;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.75);
   color: white;
-  padding: 2rem;
-  top: 0;
-  left: 0;
+  padding: 20px;
+  bottom: 0;
+  right: 0;
 }
 
-button {
+#btn {
   border-radius: 7px;
   padding: 5px;
   border: 1px dashed gray;
