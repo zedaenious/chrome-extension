@@ -1,0 +1,9 @@
+{
+  "name": "my first v3 browser extension",
+  "description": "playing around with the tool that Alphabet/Google used to force an industry of tech into obseletion",
+  "version": "1.0",
+  "manifest_version": 3,
+  "background": {
+    "service_worker": "background.js"
+  }
+}
