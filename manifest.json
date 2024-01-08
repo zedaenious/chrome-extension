@@ -1,9 +1,13 @@
 {
-  "name": "my first v3 browser extension",
-  "description": "playing around with the tool that Alphabet/Google used to force an industry of tech into obseletion",
+  "name": "cat thrower",
+  "description": "press a button, get an angry cat attack",
   "version": "1.0",
   "manifest_version": 3,
   "background": {
     "service_worker": "background.js"
-  }
+  },
+  "action": {
+    "default_popup": "popup/popup.html"
+  },
+  "options_page": "options/options.html"
 }
