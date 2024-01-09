@@ -1,7 +1,8 @@
 console.log('popup controller entrance');
 
 document.querySelector('#btn').addEventListener('click', (msg) => {
-  chrome.runtime.sendMessage({ text: `Popup message text at ${new Date()}`});
+  console.log('sending message from popup button click');
+  chrome.runtime.sendMessage({ message: `Popup message text at ${new Date()}`});
 
   chrome.tabs.query(
     {

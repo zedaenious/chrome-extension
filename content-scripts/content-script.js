@@ -10,6 +10,6 @@ document.body.innerHTML += `
 `;
 
 document.querySelector('#btn').addEventListener('click', () => {
-  console.log(`button click callback from content-scripts controller`);
-  chrome.runtime.sendMessage({message: `content sript message at ${new Date()}`});
+  console.log('sending message from content-script button click');
+  chrome.runtime.sendMessage({ message: `content sript message at ${new Date()}` });
 });
