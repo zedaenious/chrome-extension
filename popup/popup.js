@@ -10,7 +10,12 @@ document.querySelector('#btn').addEventListener('click', (msg) => {
       currentWindow: true
     },
     (tabs) => {
-      chrome.tabs.sendMessage(tabs[0]?.id, { text: "chrome.tabs.sendmessage" });
+      chrome.tabs.sendMessage(tabs[0]?.id, { text: "popup.js chrome.tabs.sendMessage text" });
     }
   );
+});
+
+chrome.runtime.onMessage.addListener((msg) => {
+  document.body.innerHTML += `<div>${msg.message}</div>`;
+  console.log('writing to DOM in popup.js message callback');
 });

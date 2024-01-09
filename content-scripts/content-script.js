@@ -10,6 +10,11 @@ document.body.innerHTML += `
 `;
 
 document.querySelector('#btn').addEventListener('click', () => {
-  console.log('sending message from content-script button click');
-  chrome.runtime.sendMessage({ message: `content sript message at ${new Date()}` });
+  console.log(`sending message from ${document.location.href} content-script button click`);
+  chrome.runtime.sendMessage({ message: `content sript message at ${new Date()} at domain ${document.location.href}` });
+});
+
+chrome.runtime.onMessage.addListener((msg) => {
+  document.querySelector('#log').append(`<div>${msg.message}</div>`);
+  console.log('writing to DOM in content-script.js message callback');
 });
