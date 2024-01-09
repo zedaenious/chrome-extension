@@ -15,6 +15,6 @@ document.querySelector('#btn').addEventListener('click', () => {
 });
 
 chrome.runtime.onMessage.addListener((msg) => {
-  document.querySelector('#log').append(`<div>${msg.message}</div>`);
+  document.querySelector('#log').innerHTML += `<div>${msg.message}</div><br/>`;
   console.log('writing to DOM in content-script.js message callback');
 });
